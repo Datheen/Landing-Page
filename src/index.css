@@ -239,4 +239,22 @@ All colors MUST be HSL.
       transform: translateY(0);
     }
   }
+
+  #hero-text {
+    background: linear-gradient(90deg, #22c55e, #fbbf24, #ffffff, #22c55e, #fbbf24, #ffffff);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: waveColor 4s linear infinite;
+  }
+
+  @keyframes waveColor {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 200% 0%;
+    }
+  }
 }
