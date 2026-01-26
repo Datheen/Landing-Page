@@ -24,7 +24,7 @@ export const Navigation = () => {
 
   return (
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-6xl">
-      <div className="bg-card/80 backdrop-blur-lg rounded-full shadow-soft border border-border/50 px-6 py-3">
+      <div className="bg-card/60 backdrop-blur-lg rounded-full shadow-soft border border-border/50 px-6 py-3">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 group">
             <div className="bg-primary rounded-full p-2 group-hover:scale-110 transition-transform">
