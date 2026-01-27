@@ -23,14 +23,14 @@ export const BlogCard = ({
     const ctx = gsap.context(() => {
       gsap.from(cardRef.current, {
         opacity: 0,
-        y: 100,
+        y: 50,
         rotationY: -15,
-        scale: 0.8,
-        duration: 1,
-        ease: "power3.out",
+        scale: 0.9,
+        duration: 0.5,
+        ease: "power2.out",
         scrollTrigger: {
           trigger: cardRef.current,
-          start: "top bottom-=100",
+          start: "top bottom-=50",
           toggleActions: "play none none reverse",
         },
       });
@@ -43,12 +43,12 @@ export const BlogCard = ({
           onEnter: () => {
             gsap.to(cardRef.current, {
               y: -10,
-              duration: 0.3,
+              duration: 0.2,
               ease: "power2.out",
             });
           },
           onLeave: () => {
-            gsap.to(cardRef.current, { y: 0, duration: 0.3 });
+            gsap.to(cardRef.current, { y: 0, duration: 0.2 });
           },
         },
       });
