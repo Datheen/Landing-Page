@@ -64,7 +64,7 @@ export const Hero = () => {
     <div className="min-h-screen w-full md:gap-[190px] relative bg-[url('/bghero.jpg')] bg-cover bg-center flex items-center text-center justify-center flex-col md:flex-row py-10">
       <div className="absolute inset-0 bg-black/30 z-0"></div>
       <div className="relative z-10">
-        <h1 ref={titleRef} className="md:text-6xl text-[2.8rem] 2xl:mt-[-150px] font-semibold text-primary/90 z-2">
+        <h1 ref={titleRef} className="md:text-6xl text-[2.8rem] 2xl:mt-[-200px] font-semibold text-primary/90 z-2">
           {splitText("<CkristianFelipe/>")}
         </h1>
         <h2 ref={subtitleRef} className="text-white/80 text-2xl text-shadow md:text-start md:pl-12">
@@ -77,7 +77,7 @@ export const Hero = () => {
 </button></div>
       </div>
 
-      <div ref={ckrisRef} className="relative z-10">
+      <div ref={ckrisRef} className="relative z-10 2xl:mt-[-200px]">
         <Ckris/>
       </div>
          
