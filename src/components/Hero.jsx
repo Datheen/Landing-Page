@@ -77,7 +77,7 @@ export const Hero = () => {
           Desenvolvedor Front-End
         </h2>
         <div ref={ctaRef} id="CTA" className="mt-6 flex ml-5">
-          <button className="flex gap-2 scale-75 shadow-[inset_0_0_0_2px_#B2D649] text-zinc-800 px-8 py-4 rounded-full tracking-widest uppercase font-bold bg-[#B2D649]/90 hover:bg-[#B2D649] hover:text-zinc-800 transition-all -mr-7">
+          <button onClick={(e) => e.currentTarget.blur()} className="flex gap-2 scale-75 shadow-[inset_0_0_0_2px_#B2D649] text-zinc-800 px-8 py-4 rounded-full tracking-widest uppercase font-bold bg-[#B2D649]/90 hover:bg-[#B2D649] hover:text-zinc-800 transition-all -mr-7 focus:outline-none">
             Contato
             <svg
               class="w-[24px] h-[24px] text-zinc-800 dark:text-zinc-800"
@@ -100,7 +100,7 @@ export const Hero = () => {
               />
             </svg>
           </button>
-          <button className="scale-75 shadow-[inset_0_0_0_2px_#B2D649] text-primary px-12 py-4 rounded-full tracking-widest uppercase font-bold bg-transparent hover:bg-[#B2D649] hover:text-zinc-800 transition-all ">
+          <button onClick={(e) => e.currentTarget.blur()} className="scale-75 shadow-[inset_0_0_0_2px_#B2D649] text-primary px-12 py-4 rounded-full tracking-widest uppercase font-bold bg-transparent hover:bg-[#B2D649] hover:text-zinc-800 transition-all focus:outline-none">
             Ver mais
           </button>
         </div>
