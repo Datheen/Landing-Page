@@ -14,7 +14,7 @@ export const Hero = () => {
         <h2 className="text-white/80 text-2xl text-shadow md:text-start md:pl-12">
           Desenvolvedor Front-End
         </h2>
-    <div id="CTA" className="mt-6 flex ml-5"><button className="scale-75 shadow-[inset_0_0_0_2px_#B2D649] text-primary px-12 py-4 rounded-full tracking-widest uppercase font-bold bg-transparent hover:bg-[#B2D649] hover:text-zinc-800 active:opacity-40 -mr-7">
+    <div id="CTA" className="mt-6 flex ml-5"><button className="scale-75 shadow-[inset_0_0_0_2px_#B2D649] text-zinc-800 px-12 py-4 rounded-full tracking-widest uppercase font-bold bg-[#B2D649]/90 hover:bg-[#B2D649] hover:text-zinc-800 active:opacity-40 -mr-7">
   Contato
 </button><button className="scale-75 shadow-[inset_0_0_0_2px_#B2D649] text-primary px-12 py-4 rounded-full tracking-widest uppercase font-bold bg-transparent hover:bg-[#B2D649] hover:text-zinc-800 active:opacity-40 ">
   Ver mais
