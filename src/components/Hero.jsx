@@ -32,11 +32,12 @@ export const Hero = () => {
 
       gsap.from(ctaRef.current.children, {
         opacity: 0,
-        scale: 0,
-        duration: 0.8,
+        y: 100,
+        duration: 1,
         delay: 0.8,
         stagger: 0.2,
-        ease: "elastic.out(1, 0.5)",
+        ease: "bounce.out",
+        clearProps: "all"
       });
 
       gsap.from(ckrisRef.current, {
@@ -77,10 +78,10 @@ export const Hero = () => {
           Desenvolvedor Front-End
         </h2>
         <div ref={ctaRef} id="CTA" className="mt-6 flex ml-5">
-          <button className="flex gap-2 scale-75 shadow-[inset_0_0_0_2px_#B2D649] text-zinc-800 px-8 py-4 rounded-full tracking-widest uppercase font-bold bg-[#B2D649]/90 hover:bg-[#B2D649] hover:text-zinc-800 active:opacity-40 -mr-7">
+          <button className="flex gap-2 scale-75 shadow-[inset_0_0_0_2px_#B2D649] text-zinc-800 px-8 py-4 rounded-full tracking-widest uppercase font-bold bg-[#B2D649]/90 hover:bg-[#B2D649] hover:text-zinc-800 transition-all -mr-7">
             Contato
             <svg
-              class="w-[24px] h-[24px] text-zinc-800 dark:text-white"
+              class="w-[24px] h-[24px] text-zinc-800 dark:text-zinc-800"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -100,7 +101,7 @@ export const Hero = () => {
               />
             </svg>
           </button>
-          <button className="scale-75 shadow-[inset_0_0_0_2px_#B2D649] text-primary px-12 py-4 rounded-full tracking-widest uppercase font-bold bg-transparent hover:bg-[#B2D649] hover:text-zinc-800 active:opacity-40 ">
+          <button className="scale-75 shadow-[inset_0_0_0_2px_#B2D649] text-primary px-12 py-4 rounded-full tracking-widest uppercase font-bold bg-transparent hover:bg-[#B2D649] hover:text-zinc-800 transition-all ">
             Ver mais
           </button>
         </div>
