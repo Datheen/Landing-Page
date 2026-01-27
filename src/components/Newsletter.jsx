@@ -3,6 +3,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Leaf } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { StatefulButtonDemo } from "./StatefulButtonDemo";
 
 export const Newsletter = () => {
   const [email, setEmail] = useState("");
@@ -81,11 +82,11 @@ export const Newsletter = () => {
               size="lg"
               className="
                 rounded-full
-                bg-green-600 text-white hover:bg-green-700
-                dark:bg-white dark:text-zinc-900 dark:hover:bg-white/90
+                bg-primary text-white hover:bg-green-700
+                dark:bg-primary/50 dark:text-zinc-900 dark:hover:bg-primary/90
               "
             >
-              Enviar
+             <StatefulButtonDemo/>
             </Button>
           </form>
         </div>
