@@ -1,19 +1,18 @@
 import { useState } from "react";
-import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Leaf } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
 import { StatefulButtonDemo } from "./StatefulButtonDemo";
 
 export const Newsletter = () => {
   const [email, setEmail] = useState("");
-  const { toast } = useToast();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
     if (!email) return;
 
- 
+    // Simula envio de e-mail
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
+    alert("Seu E-mail foi salvo em breve entraremos em contato!");
 
     setEmail("");
   };
@@ -31,7 +30,7 @@ export const Newsletter = () => {
           {/* Ícone */}
           <div className="flex justify-center mb-6">
             <div className="rounded-full p-4 animate-float bg-zinc-100 dark:bg-white/10 backdrop-blur-sm">
-              <Leaf className="h-8 w-8 text-green-600 dark:text-white" />
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#A0C147"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480v58q0 59-40.5 100.5T740-280q-35 0-66-15t-52-43q-29 29-65.5 43.5T480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480v58q0 26 17 44t43 18q26 0 43-18t17-44v-58q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93h200v80H480Zm0-280q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Z"/></svg>
             </div>
           </div>
 
@@ -57,10 +56,7 @@ export const Newsletter = () => {
           </p>
 
           {/* Formulário */}
-          <form
-            onSubmit={handleSubmit}
-            className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
-          >
+          <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
             <Input
               type="email"
               placeholder="E-mail"
@@ -77,18 +73,8 @@ export const Newsletter = () => {
               "
             />
 
-            <Button
-              type="submit"
-              size="lg"
-              className="
-                rounded-full
-                bg-primary text-white hover:bg-green-700
-                dark:bg-primary/50 dark:text-zinc-900 dark:hover:bg-primary/90
-              "
-            >
-             <StatefulButtonDemo/>
-            </Button>
-          </form>
+            <StatefulButtonDemo onSubmit={handleSubmit} disabled={!email} />
+          </div>
         </div>
       </div>
     </section>
