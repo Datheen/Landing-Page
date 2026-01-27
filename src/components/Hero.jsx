@@ -42,11 +42,10 @@ export const Hero = () => {
 
       gsap.from(ckrisRef.current, {
         opacity: 0,
-        scale: 0.5,
-        rotation: -180,
-        duration: 1.5,
+        y: 50,
+        duration: 1.2,
         delay: 0.3,
-        ease: "power4.out",
+        ease: "power2.out",
       });
     });
 
