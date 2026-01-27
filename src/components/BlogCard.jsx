@@ -2,6 +2,11 @@ import { Link } from "react-router-dom";
 import { Card, CardContent, CardFooter, CardHeader } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Calendar, Clock } from "lucide-react";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const BlogCard = ({
   id,
@@ -12,9 +17,49 @@ export const BlogCard = ({
   readTime,
   image,
 }) => {
+  const cardRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(cardRef.current, {
+        opacity: 0,
+        y: 100,
+        rotationY: -15,
+        scale: 0.8,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: cardRef.current,
+          start: "top bottom-=100",
+          toggleActions: "play none none reverse",
+        },
+      });
+
+      gsap.to(cardRef.current, {
+        scrollTrigger: {
+          trigger: cardRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          onEnter: () => {
+            gsap.to(cardRef.current, {
+              y: -10,
+              duration: 0.3,
+              ease: "power2.out",
+            });
+          },
+          onLeave: () => {
+            gsap.to(cardRef.current, { y: 0, duration: 0.3 });
+          },
+        },
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <Link to={`/post/${id}`} className="block group">
-      <Card className="overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300 border-border/50 h-full flex flex-col">
+      <Card ref={cardRef} className="overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300 border-border/50 h-full flex flex-col">
         <div className="aspect-video overflow-hidden">
           <img
             src={image}
