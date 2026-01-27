@@ -31,25 +31,7 @@ export const BlogCard = ({
         scrollTrigger: {
           trigger: cardRef.current,
           start: "top bottom-=50",
-          toggleActions: "play none none reverse",
-        },
-      });
-
-      gsap.to(cardRef.current, {
-        scrollTrigger: {
-          trigger: cardRef.current,
-          start: "top bottom",
-          end: "bottom top",
-          onEnter: () => {
-            gsap.to(cardRef.current, {
-              y: -10,
-              duration: 0.2,
-              ease: "power2.out",
-            });
-          },
-          onLeave: () => {
-            gsap.to(cardRef.current, { y: 0, duration: 0.2 });
-          },
+          once: true,
         },
       });
     });
